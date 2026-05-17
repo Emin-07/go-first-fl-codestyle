@@ -29,9 +29,8 @@ func defence(char_name, char_class string) string {
 		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(-2, 2))
 	} else if char_class == "healer" {
 		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(2, 5))
-	} else {
-		return "неизвестный класс персонажа"
 	}
+	return "неизвестный класс персонажа"
 }
 
 // обратите внимание на "if else" и на "else"
@@ -42,9 +41,8 @@ func special(charName, charClass string) string {
 		return fmt.Sprintf("%s применил специальное умение `Атака %d`", charName, 5+40)
 	} else if charClass == "healer" {
 		return fmt.Sprintf("%s применил специальное умение `Защита %d`", charName, 10+30)
-	} else {
-		return "неизвестный класс персонажа"
 	}
+	return "неизвестный класс персонажа"
 }
 
 // здесь обратите внимание на имена параметров
@@ -89,7 +87,7 @@ func start_training(char_name, char_class string) string {
 }
 
 // обратите внимание на имя функции и имена переменных
-func choise_char_class() string {
+func choice_char_class() string {
 	var approve_choice string
 	var char_class string
 
@@ -124,7 +122,7 @@ func main() {
 	fmt.Println("Ты можешь выбрать один из трёх путей силы:")
 	fmt.Println("Воитель, Маг, Лекарь")
 
-	char_class := choise_char_class()
+	char_class := choice_char_class()
 
 	fmt.Println(start_training(char_name, char_class))
 }
